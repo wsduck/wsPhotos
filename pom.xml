@@ -20,16 +20,24 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- 为了能够正确的在jsp中使用jstl -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
 		</dependency>
+		<!-- 使用Postgresql数据库，加入其jdbc驱动jar包 -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -58,4 +66,5 @@
 			<url>https://repo.spring.io/libs-release</url>
 		</pluginRepository>
 	</pluginRepositories>
+	<packaging>war</packaging>
 </project>
