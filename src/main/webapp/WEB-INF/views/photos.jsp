@@ -7,18 +7,17 @@
 <meta http-equiv="Cotnent-Type" content="text/html" charset="utf-8" />
 <title>我的照片</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="./css/index.css" rel="stylesheet" media="screen">
+<link href="./css/photos.css" rel="stylesheet" media="screen">
 <link href="./css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
 <body>
-	<div class="container-fluid container-fluid-get-ridof-padding">
+	<div class="container-fluid">
 		<div id="header" class="row-fluid">
-			<div class="span1"></div>
+			<div class="span2"></div>
 			<div id="user-header" class="span10">
 				<img src="img/user-header.jpg" class="img-circle img-header"></img>
 				<span class="header-name">挨踢灰太狼</span>
 			</div>
-			<div class="span1"></div>
 		</div>
 		<div class="row-fluid menu-up-background"></div>
 		<div id="menu" class="row-fluid menu-up">
@@ -38,69 +37,61 @@
 			</div>
 			<div class="span2"></div>
 		</div>
-		
-		<div id="album-tools" class="row-fluid">
-		    <div class="span1"></div>
-		    <div class="span11">
-		        <button class="btn new-album-btn" type="button"><i class="icon-plus"></i>创建相册</button>
-		    </div>
-		</div>
 
-		<div id="album-main" class="row-fluid">
-			<div class="span1"></div>
-			<div class="span10">
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
+		<div id="main" class="row-fluid photos-area">
+			<div class="span12">
+				<div id="photos-container">
+					<div class="item">
+						<img src="http://pic.sucaibar.com/pic/201306/21/60afb4fa1f.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://pic33.nipic.com/20131009/1081324_135314208109_2.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://pic27.nipic.com/20130217/4085465_003058516110_2.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://www.cnnb.com.cn/pic/0/02/17/04/2170490_233863.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://img.article.pchome.net/00/23/38/79/pic_lib/wm/32.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+
+					<div class="item">
+						<img src="http://new-img1.ol-img.com/115/787/liSbo5NMrfvdM.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://news.xinhuanet.com/shuhua/2012-11/28/124016520_31n.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://pic18.nipic.com/20120201/5446201_093624896000_2.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
+					<div class="item">
+						<img
+							src="http://pic3.bbzhi.com/mingxingbizhi/gaoyuanyuan2/star_starcn_178932_2.jpg"
+							height="100%" width="290px" alt=""></img>
+					</div>
 				</div>
 			</div>
-			<div class="span1"></div>
 		</div>
 
 		<div class="row-fluid">
 			<div id="span-load-more" class="span12 load-more-album">
-				<span>载入更多相册</span>
+				<span>载入更多照片</span>
 			</div>
 		</div>
 		<div id="footer" class="row-fluid about">
@@ -112,6 +103,8 @@
 	</div>
 </body>
 <script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/imagesloaded.pkgd.min.js"></script>
+<script src="./js/masonry.pkgd.min.js"></script>
 <script type="text/javascript">
     // var of this page
     var current_menu = 'album';
@@ -129,6 +122,14 @@
             //绑定事件
             bindMenuEvent();
             bindLoadMoreEvent();
+
+            var $main = $('#photos-container');
+            $main.imagesLoaded(function() {
+                $main.masonry({
+                    columnWidth: 292,
+                    itemSelector: '.item'
+                });
+            });
         }//End of initPage
         //绑定载入更多相册事件
         function bindLoadMoreEvent() {
