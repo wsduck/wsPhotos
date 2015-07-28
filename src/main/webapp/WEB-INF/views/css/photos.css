@@ -1,0 +1,145 @@
+#header {
+	background-image: url(../img/blue-background.jpg);
+	background-repeat: repeat-x;
+}
+
+.photo-album {
+	margin-top: 10px;
+	margin-left: 15px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.2);
+	border-width: thin;
+}
+
+.img-header {
+	margin-top: 20px;
+	width: 100px;
+	height: 100px;
+}
+
+#user-header {
+	height: 120px;
+}
+
+.photo-album-hover {
+	margin-top: 10px;
+	margin-left: 15px;
+	border-style: solid;
+	border-color: rgba(0,0,0,0.2);
+	border-width: thin;
+	box-shadow: 0 4px 4px #e5e5e5;
+	opacity: 0.8;
+	color: #008fd9;
+	cursor: pointer;
+}
+
+#user-name {
+	padding-top: 50px;
+	margin-left: 1px;
+}
+
+.header-name {
+	height: 30px;
+	display: block;
+	margin-top: -30px;
+	margin-left: 100px;	
+	overflow: hidden;
+	text-shadow: 1px 1px 1px #000;
+	color: #fff;
+	font-size: 1.3em;
+}
+
+.menu-up-background {
+	height: 30px;
+	margin-top: 0;
+	background: rgba(0,0,0,0.2);
+}
+
+.menu-up {
+	height: 30px;
+	margin-top: -30px;
+}
+
+.menu-item {
+	color: #fff;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
+	height: 30px;
+	margin-left: 1px;
+	line-height: 24px;
+	vertical-align: middle;
+	font-size: 1em;
+	cursor: pointer;
+}
+
+.menu-item-selected {
+	color: #008fd9;
+	text-align: center;
+	text-shadow: 1px 1px 1px #000;
+	height: 30px;
+	margin-left: 1px;
+	font-size: 1.1em;
+	line-height: 24px;
+	vertical-align: middle;
+	background: rgba(0,0,0,0.4);
+	cursor: pointer;
+}
+
+#main.photos-area {
+	margin-top: 10px;
+}
+
+.album-name {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 1em;
+	display: block;
+	padding: 5px 5px 5px 5px;
+}
+
+.album-date {
+	font-size: 0.7em;
+	padding-left: 5px;
+	color: #bebebe;
+}
+
+.img-custom {
+	border-width: 0;
+	box-shadow: 0 0 0;
+	padding: 0 0;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.about {
+	text-align: center;
+	margin-top: 30px;
+	background-image: url(../img/blue-footer-background.jpg);
+	background-repeat: repeat-x;
+}
+
+.about-content {
+	color: #bebebe;
+	font-size: 0.8em;
+	margin: 5px 0 5px 0;
+}
+
+.load-more-album {
+	margin: 10px 0 0 0;
+	text-align: center;
+}
+
+.load-more-album-hover {
+	color: #008fd9;
+	margin: 10px 0 0 0;
+	text-align: center;
+	cursor: pointer;
+}
+
+.search-input-box {
+	font-size: 0.8em !important;
+}
