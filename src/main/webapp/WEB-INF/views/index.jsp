@@ -38,12 +38,14 @@
 			</div>
 			<div class="span2"></div>
 		</div>
-		
+
 		<div id="album-tools" class="row-fluid">
-		    <div class="span1"></div>
-		    <div class="span11">
-		        <button class="btn new-album-btn" type="button"><i class="icon-plus"></i>创建相册</button>
-		    </div>
+			<div class="span1"></div>
+			<div class="span11">
+				<button class="btn new-album-btn" type="button">
+					<i class="icon-plus"></i>创建相册
+				</button>
+			</div>
 		</div>
 
 		<div id="album-main" class="row-fluid">
@@ -112,118 +114,17 @@
 	</div>
 </body>
 <script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/index.js"></script>
 <script type="text/javascript">
-    // var of this page
-    var current_menu = 'album';
+	/*当前的菜单选项*/
+	var current_menu = 'album';
 
-    $(function() {
-        ///////////////////////////////////////////////////////
-        // 函数调用区
-        ///////////////////////////////////////////////////////
-        initPage();
-        
-        ///////////////////////////////////////////////////////
-        // 函数定义区
-        ///////////////////////////////////////////////////////
-        function initPage() {
-            //绑定事件
-            bindMenuEvent();
-            bindLoadMoreEvent();
-        }//End of initPage
-        //绑定载入更多相册事件
-        function bindLoadMoreEvent() {
-            $("#span-load-more").mouseover(function(){$(this).attr("class", "span12 load-more-album-hover");}).mouseout(function(){$(this).attr("class", "span12 load-more-album");});
-        }
-        //绑定菜单上的事件
-        function bindMenuEvent() {
-            //绑定相册按钮事件
-            $('#menu-album').on(
-                "click",
-                function(event) {
-                    var item = $('#menu-album');
-                    item.attr("class", "span4 menu-item-selected");
-                    item = $('#menu-map');
-                    item.attr("class", "span4 menu-item");
-                    item = $('#menu-timeline');
-                    item.attr("class", "span4 menu-item");
-                    current_menu = 'album';
-                }
-            );
-            $('#menu-album').on(
-                "mouseover",
-                function(event) {
-                    var item = $('#menu-album');
-                    item.attr("class", "span4 menu-item-selected");
-                }
-            );
-            $('#menu-album').on(
-                "mouseout",
-                function(event) {
-                    var item = $('#menu-album');
-                    if (current_menu !== 'album') {
-                        item.attr("class", "span4 menu-item");
-                    }
-                }
-            );
-            //绑定地图事件
-            $('#menu-map').on(
-                "click",
-                function(event) {
-                    var item = $('#menu-map');
-                    item.attr("class", "span4 menu-item-selected");
-                    item = $('#menu-album');
-                    item.attr("class", "span4 menu-item");
-                    item = $('#menu-timeline');
-                    item.attr("class", "span4 menu-item");
-                    current_menu = 'map';
-                }
-            );
-            $('#menu-map').on(
-                "mouseover",
-                function(event) {
-                    var item = $('#menu-map');
-                    item.attr("class", "span4 menu-item-selected");
-                }
-            );
-            $('#menu-map').on(
-                "mouseout",
-                function(event) {
-                    var item = $('#menu-map');
-                    if (current_menu !== 'map') {
-                        item.attr("class", "span4 menu-item");
-                    }
-                }
-            );
-            //绑定时间轴事件
-            $('#menu-timeline').on(
-                "click",
-                function(event) {
-                    var item = $('#menu-timeline');
-                    item.attr("class", "span4 menu-item-selected");
-                    item = $('#menu-album');
-                    item.attr("class", "span4 menu-item");
-                    item = $('#menu-map');
-                    item.attr("class", "span4 menu-item");
-                    current_menu = 'timeline';
-                }
-            );
-            $('#menu-timeline').on(
-                "mouseover",
-                function(event) {
-                    var item = $('#menu-timeline');
-                    item.attr("class", "span4 menu-item-selected");
-                }
-            );
-            $('#menu-timeline').on(
-                "mouseout",
-                function(event) {
-                    var item = $('#menu-timeline');
-                    if (current_menu !== 'timeline') {
-                        item.attr("class", "span4 menu-item");
-                    }
-                }
-            );
-        }
-    });
-    </script>
+	/*页面加载完后执行*/
+	$(function() {
+		//绑定事件
+		bindMenuEvent();
+		//绑定加载更多相册按钮
+		bindLoadMoreEvent();
+	});
+</script>
 </html>
