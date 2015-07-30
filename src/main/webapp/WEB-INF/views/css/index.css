@@ -206,3 +206,13 @@
 	text-align: center;
 	height: 26px;
 }
+
+.album-item-photo-count-hover {
+    background-image: url(../img/album-total-background.png);
+    margin: -90px 0 0 130px;
+    color: #008fd9;
+    font-family: 宋体;
+    line-height: 26px;
+    text-align: center;
+    height: 26px;
+}

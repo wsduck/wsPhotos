@@ -137,8 +137,10 @@ function loadAlbumsInfo(pageNum) {
 				var div_id = "album_" + albumInfo.id;
 				$("#" + div_id).mouseover(function() {
 					$(this).attr("class", "album-item-hover");
+					$(this).children("div.album-item-photo-count").attr("class", "album-item-photo-count-hover");
 				}).mouseout(function(){
 					$(this).attr("class", "album-item");
+					$(this).children("div.album-item-photo-count-hover").attr("class", "album-item-photo-count");
 				});
 			}
 			
