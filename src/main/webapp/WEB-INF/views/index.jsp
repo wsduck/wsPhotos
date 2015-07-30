@@ -50,53 +50,7 @@
 
 		<div id="album-main" class="row-fluid">
 			<div class="span1"></div>
-			<div class="span10">
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-				<div class="album-item">
-					<div class="album-item-cover"></div>
-					<p class="album-item-name">巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛巴厘岛</p>
-					<p class="album-item-date">2014-08-12</p>
-				</div>
-			</div>
+			<div id="show-albums-area" class="span10"></div>
 			<div class="span1"></div>
 		</div>
 
@@ -114,10 +68,13 @@
 	</div>
 </body>
 <script src="./js/jquery-1.11.2.min.js"></script>
+<script src="./js/common.js"></script>
 <script src="./js/index.js"></script>
 <script type="text/javascript">
 	/*当前的菜单选项*/
 	var current_menu = 'album';
+	/*每次请求相册的数目*/
+	var PAGE_SIZE = 20;
 
 	/*页面加载完后执行*/
 	$(function() {
@@ -125,6 +82,8 @@
 		bindMenuEvent();
 		//绑定加载更多相册按钮
 		bindLoadMoreEvent();
+		//加载相册信息(第一页)
+		loadAlbumsInfo(1);
 	});
 </script>
 </html>

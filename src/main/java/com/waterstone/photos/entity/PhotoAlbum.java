@@ -1,5 +1,6 @@
 package com.waterstone.photos.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,13 +18,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "photo_album")
-public class PhotoAlbum {
+public class PhotoAlbum implements Serializable {
+	private static final long serialVersionUID = -7139026232334343666L;
 
 	/* Album unique id */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO, generator="uuid")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false, unique = true)
-	private String id;
+	private Integer id;
 
 	/* Album name */
 	@Column(name = "album_name", nullable = false, unique = true)
@@ -31,7 +33,7 @@ public class PhotoAlbum {
 
 	/* Photo number */
 	@Column(name = "photo_number")
-	private Long photoNumber;
+	private Integer photoNumber;
 
 	/* Album description */
 	@Column(name = "album_description", nullable = false)
@@ -64,7 +66,7 @@ public class PhotoAlbum {
 	public PhotoAlbum() {
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -76,11 +78,11 @@ public class PhotoAlbum {
 		this.albumName = albumName;
 	}
 
-	public Long getPhotoNumber() {
+	public Integer getPhotoNumber() {
 		return photoNumber;
 	}
 
-	public void setPhotoNumber(Long photoNumber) {
+	public void setPhotoNumber(Integer photoNumber) {
 		this.photoNumber = photoNumber;
 	}
 

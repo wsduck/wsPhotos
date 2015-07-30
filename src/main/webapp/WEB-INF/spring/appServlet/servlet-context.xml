@@ -10,7 +10,18 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
-
+	
+	<!-- 以下代码解决了json返回值中存在中文乱码的问题。 -->
+	<beans:bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<beans:property name="messageConverters">
+			<beans:list>
+				<beans:bean
+					class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				</beans:bean>
+			</beans:list>
+		</beans:property>
+	</beans:bean>
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
@@ -28,7 +39,7 @@
 
 	<!-- Scan for components in the packages automatically. -->
 	<context:component-scan base-package="com.waterstone.photos" />
-	<context:component-scan base-package="com.waterstone.photos.service.impl"/>
+	<context:component-scan base-package="com.waterstone.photos.service.impl" />
 
 	<!-- Make static resources available. -->
 	<resources location="/WEB-INF/views/css/" mapping="/css/**"></resources>
@@ -61,6 +72,10 @@
 				<beans:property name="generateDdl" value="true" />
 			</beans:bean>
 		</beans:property>
+	</beans:bean>
+	<beans:bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<beans:property name="entityManagerFactory" ref="entityManagerFactory" />
 	</beans:bean>
 	<jpa:repositories base-package="com.waterstone.photos.repositories"></jpa:repositories>
 </beans:beans>
