@@ -59,12 +59,20 @@
 				<span>载入更多相册</span>
 			</div>
 		</div>
+		<div class="row-fluid">
+			<div class="span2"></div>
+			<div id="progress-bar"
+				class="progress progress-striped active span8"
+				style="display: none;">
+				<div class="bar" style="width: 100%"></div>
+			</div>
+			<div class="span2"></div>
+		</div>
 		<div id="footer" class="row-fluid about">
 			<div class="span12">
 				<p class="about-content">@2015富士通南大&nbsp;&nbsp;|&nbsp;&nbsp;第二事业部第三开发部&nbsp;&nbsp;|&nbsp;&nbsp;意见反馈&nbsp;&nbsp;|&nbsp;&nbsp;用户投诉</p>
 			</div>
 		</div>
-
 	</div>
 </body>
 <script src="./js/jquery-1.11.2.min.js"></script>
@@ -74,7 +82,9 @@
 	/*当前的菜单选项*/
 	var current_menu = 'album';
 	/*每次请求相册的数目*/
-	var PAGE_SIZE = 20;
+	var PAGE_SIZE = 10;
+	/*当前的已经翻过的页数*/
+	var current_page = 1;
 
 	/*页面加载完后执行*/
 	$(function() {
@@ -83,7 +93,7 @@
 		//绑定加载更多相册按钮
 		bindLoadMoreEvent();
 		//加载相册信息(第一页)
-		loadAlbumsInfo(1);
+		loadAlbumsInfo(current_page);
 	});
 </script>
 </html>

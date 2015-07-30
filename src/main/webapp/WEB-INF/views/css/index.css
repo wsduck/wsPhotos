@@ -146,6 +146,22 @@
 	        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
+.album-item-hover {
+    margin-top: 10px;;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 250px;
+    float: left;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+       -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
 .album-item-cover {
 	width: 200px;
 	height: 200px;
@@ -179,4 +195,14 @@
 
 .new-album-btn {
 	margin: 10px 10px;
+}
+
+.album-item-photo-count {
+	background-image: url(../img/album-total-background.png);
+	margin: -90px 0 0 130px;
+	color: white;
+	font-family: 宋体;
+	line-height: 26px;
+	text-align: center;
+	height: 26px;
 }

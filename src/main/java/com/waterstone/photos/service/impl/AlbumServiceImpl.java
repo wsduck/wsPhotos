@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
 
 import com.waterstone.photos.entity.PhotoAlbum;
@@ -32,7 +34,7 @@ public class AlbumServiceImpl implements AlbumService {
 
 		/************** This is just for test **********************/
 		// TODO Remove this section later.
-		initPhotoAlbumInfoForTest();
+		//initPhotoAlbumInfoForTest();
 		/*********************************************************/
 
 		List<PhotoAlbum> albumList = albumRepository.findAllValid(true);
@@ -46,30 +48,35 @@ public class AlbumServiceImpl implements AlbumService {
 	 */
 	private void initPhotoAlbumInfoForTest() {
 		this.albumRepository.deleteAll();
-
-		PhotoAlbum pa = new PhotoAlbum();
-		pa.setAlbumDescription("夏威夷美丽的小岛。");
-		pa.setAlbumName("夏威夷之旅");
-		Date now = new Date();
-		pa.setCreateTime(now);
-		pa.setUpdateTime(now);
-		pa.setIsValid(true);
-		pa.setPhotoNumber(10);
-		pa.setPhotoUrlForAlbumCover("http://pic.sucaibar.com/pic/201306/21/60afb4fa1f.jpg");
-		pa.setCreateUserName("waterstone");
-		pa.setUpdateUserName("waterstone");
-		this.albumRepository.save(pa);
-
+		
+		String des = "普吉岛美丽的小岛";
+		String name = "普吉岛之旅";
+		String cover = "http://pic.sucaibar.com/pic/201306/21/60afb4fa1f.jpg";
+		String user = "waterstone";
+		
+		for (int i=0; i<100; i++) {
+			createOneAlbum(des + i, name + i, cover, user);
+			
+			try {
+				Thread.sleep(50);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	private void createOneAlbum(String des, String name, String cover, String user) {		
 		PhotoAlbum pb = new PhotoAlbum();
-		pb.setAlbumDescription("普吉岛美丽的小岛。");
-		pb.setAlbumName("普吉岛之旅");
+		pb.setAlbumDescription(des);
+		pb.setAlbumName(name);
+		Date now = new Date();
 		pb.setCreateTime(now);
 		pb.setUpdateTime(now);
 		pb.setIsValid(true);
 		pb.setPhotoNumber(10);
-		pb.setPhotoUrlForAlbumCover("http://www.cnnb.com.cn/pic/0/02/17/04/2170490_233863.jpg");
-		pb.setCreateUserName("waterstone");
-		pb.setUpdateUserName("waterstone");
+		pb.setPhotoUrlForAlbumCover(cover);
+		pb.setCreateUserName(user);
+		pb.setUpdateUserName(user);
 		this.albumRepository.save(pb);
 	}
 
@@ -86,7 +93,7 @@ public class AlbumServiceImpl implements AlbumService {
 
 		/************** This is just for test **********************/
 		// TODO Remove this section later.
-		initPhotoAlbumInfoForTest();
+		//initPhotoAlbumInfoForTest();
 		/*********************************************************/
 
 		if (page < 1 || size < 1) {
@@ -94,7 +101,7 @@ public class AlbumServiceImpl implements AlbumService {
 			return new ArrayList<PhotoAlbum>();
 		}
 		
-		Pageable pg = new PageRequest(page-1, size);
+		Pageable pg = new PageRequest(page-1, size, new Sort(Direction.DESC, "updateTime"));
 		Page<PhotoAlbum> albumPageList = albumRepository.findAll(pg);
 
 		logger.info("[Leave AlbumServiceImpl.getPagableAlbumsInfo()]... ");
