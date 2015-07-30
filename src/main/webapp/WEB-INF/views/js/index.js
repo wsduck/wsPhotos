@@ -120,9 +120,13 @@ function loadAlbumsInfo(pageNum) {
 			/*为了不让显示“xxx张”超宽，需要限定每个相册最多不超过10000张。*/
 			for ( i=0; i<albumCount; i++) {
 				var albumInfo = albums[i];
+				var albumCoverUrl = albumInfo.photoUrlForAlbumCover;
+				if (albumCoverUrl === null || albumCoverUrl === "") {
+					albumCoverUrl = "url(../img/album-cover-default.png)";
+				}
 				var appendAlbumHtmlContent = 
 					"<div id=album_"+ albumInfo.id + " class=\"album-item\">" +
-						"<div class=\"album-item-cover\" style=\"background-image: url(" + albumInfo.photoUrlForAlbumCover +")\"></div>" +
+						"<div class=\"album-item-cover\" style=\"background-image: url(" + albumCoverUrl +")\"></div>" +
 						"<p class=\"album-item-name\">" + albumInfo.albumName + "</p>" +
 						"<p class=\"album-item-date\">" + formatDate(new Date(albumInfo.updateTime)) + "</p>" +
 						"<div class=\"album-item-photo-count\">" + albumInfo.photoNumber + " 张</div>"

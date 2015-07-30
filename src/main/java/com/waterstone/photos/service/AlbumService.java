@@ -2,8 +2,6 @@ package com.waterstone.photos.service;
 
 import java.util.List;
 
-import org.springframework.data.domain.Page;
-
 import com.waterstone.photos.entity.PhotoAlbum;
 
 /**
