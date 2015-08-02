@@ -10,7 +10,7 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing 
 		infrastructure -->
-	
+
 	<!-- 以下代码解决了json返回值中存在中文乱码的问题。 -->
 	<beans:bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
@@ -78,4 +78,5 @@
 		<beans:property name="entityManagerFactory" ref="entityManagerFactory" />
 	</beans:bean>
 	<jpa:repositories base-package="com.waterstone.photos.repositories"></jpa:repositories>
+
 </beans:beans>

@@ -125,7 +125,7 @@ function loadAlbumsInfo(pageNum) {
 					albumCoverUrl = "url(../img/album-cover-default.png)";
 				}
 				var appendAlbumHtmlContent = 
-					"<div id=album_"+ albumInfo.id + " class=\"album-item\">" +
+					"<div id=album_"+ albumInfo.id + " data-id=\"" + albumInfo.id + "\" class=\"album-item\">" +
 						"<div class=\"album-item-cover\" style=\"background-image: url(" + albumCoverUrl +")\"></div>" +
 						"<p class=\"album-item-name\">" + albumInfo.albumName + "</p>" +
 						"<p class=\"album-item-date\">" + formatDate(new Date(albumInfo.updateTime)) + "</p>" +
@@ -141,6 +141,9 @@ function loadAlbumsInfo(pageNum) {
 				}).mouseout(function(){
 					$(this).attr("class", "album-item");
 					$(this).children("div.album-item-photo-count-hover").attr("class", "album-item-photo-count");
+				}).click(function(){
+					//跳转到照片一览页面
+					alert("Goto album where id=" + $(this).attr("data-id"));
 				});
 			}
 			
